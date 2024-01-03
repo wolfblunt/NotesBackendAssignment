@@ -1,5 +1,5 @@
 """
-Cart Layer
+Notes Layer
 """
 from bin.core.application.MongoOperations import NotesFormation
 from bin.common.AppConfigurations import notes_collection, user_collection

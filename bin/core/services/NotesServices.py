@@ -29,7 +29,6 @@ def token_required(f):
             print("Token : ", token)
             # data = jwt.decode(token, secret_key)
             data = jwt.decode(token, secret_key, algorithms=['HS256'])
-            # current_user = mongo.db.users.find_one({'username': data['username']})
             input_dict = {'username': data['username']}
             print("token : ", input_dict)
             current_user = UserManagement.fetch_user_details(input_dict)

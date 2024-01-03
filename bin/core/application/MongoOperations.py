@@ -179,36 +179,3 @@ class NotesFormation(object):
             print("ERROR :", traceback.print_exc())
             print("Failure to fetch cart collection --> {}".format(str(e)))
             raise Exception("Error when fetching cart collection!")
-
-    def update_cart_data(self, input_json):
-        try:
-            print("Type InputJson : ", type(input_json))
-            input_json["timestamp"] = str(datetime.utcnow()).split('.')[0]
-            condition = dict(id=input_json.get("id", ""))
-            mongo_content = self.mongo_client.update_one(condition=condition, json_data=input_json,
-                                                         _database_name=db_name,
-                                                         collection_name=cart_collection)
-            return True
-        except Exception as e:
-            import traceback
-            print("EROR :", traceback.print_exc())
-            print("Failure to fetch cart collection --> {}".format(str(e)))
-            raise Exception("Error when fetching cart collection!")
-
-    # def remove_cart(self, input_json):
-    #     try:
-    #         print("Type InputJson : ", type(input_json))
-    #         # condition = dict(id=input_json.get("id", ""))
-    #         mongo_content = self.mongo_client.remove(json_data=input_json,
-    #                                                  _database_name=db_name,
-    #                                                  collection_name=cart_collection)
-    #         print("mongo_content : ", mongo_content)
-    #         # flask.jsonify(message="success", insertedIds=todo_many.inserted_ids)
-    #         response = list()
-    #         print("REMOVE CART mongoCOntent : ", mongo_content)
-    #         return mongo_content
-    #     except Exception as e:
-    #         import traceback
-    #         print("EROR :", traceback.print_exc())
-    #         print("Failure to fetch cart collection --> {}".format(str(e)))
-    #         raise Exception("Error when fetching cart collection!")
