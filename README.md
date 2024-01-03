@@ -45,7 +45,7 @@ application should also allow users to share their notes with other users and se
 
 **Login JSON :**
 
-![Alt text]()
+![Alt text](https://github.com/wolfblunt/NotesBackendAssignment/blob/master/images/login.png)
 - In login API I'm passing username and password within the Authorization header
 - Maintaining Rate Limiter for the API
 
