@@ -103,6 +103,7 @@ def login():
 
 
 @notes.route("/api/notes", methods=["GET"])
+@rate_limited()
 @token_required
 def fetch_user_notes(current_user):
     """
@@ -125,6 +126,7 @@ def fetch_user_notes(current_user):
 
 
 @notes.route('/api/notes/<id>', methods=['GET'])
+@rate_limited()
 @token_required
 def get_note_by_id(current_user, id):
     if request.method == 'GET':
@@ -144,6 +146,7 @@ def get_note_by_id(current_user, id):
 
 
 @notes.route('/api/notes', methods=['POST'])
+@rate_limited()
 @token_required
 def create_note(current_user):
     if request.method == 'POST':
@@ -160,6 +163,7 @@ def create_note(current_user):
 
 
 @notes.route('/api/notes/<id>', methods=['PUT'])
+@rate_limited()
 @token_required
 def update_note(current_user, id):
     if request.method == 'PUT':
@@ -176,6 +180,7 @@ def update_note(current_user, id):
 
 
 @notes.route('/api/notes/<id>', methods=['DELETE'])
+@rate_limited()
 @token_required
 def delete_note(current_user, id):
     if request.method == 'DELETE':
@@ -191,6 +196,7 @@ def delete_note(current_user, id):
 
 
 @notes.route('/api/notes/<id>/share', methods=['POST'])
+@rate_limited()
 @token_required
 def share_note(current_user, id):
     if request.method == 'POST':
@@ -207,6 +213,7 @@ def share_note(current_user, id):
 
 
 @notes.route('/api/search', methods=['GET'])
+@rate_limited()
 @token_required
 def search_notes(current_user):
     if request.method == 'GET':
