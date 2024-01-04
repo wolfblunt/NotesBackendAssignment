@@ -91,7 +91,7 @@ def login():
                 {'username': results['username'], 'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=1)},
                 secret_key)
 
-            time.sleep(3000)
+            # time.sleep(3000)
 
             return jsonify({'token': token}), 200
 

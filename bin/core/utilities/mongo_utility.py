@@ -160,8 +160,8 @@ class MongoUtility():
             # db[collection_name].drop_index("username_text")
 
             # to create index in db
-            # db[collection_name].create_index([('title', 'text'), ('content', 'text')],
-            #                                  name='title_text_content_text_new')
+            db[collection_name].create_index([('title', 'text'), ('content', 'text')],
+                                             name='title_text_content_text_new')
 
             # to list collection index
             # indexes = db[collection_name].list_indexes()
